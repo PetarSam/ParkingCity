@@ -12,9 +12,10 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-geolocation-service": "^4.0.0",
-    "react-native-modal": "^11.5.3",
-    "react-native-number-selector": "^1.0.1"
+    "react-native-background-fetch": "^2.0.8",
+    "react-native-background-task": "^0.2.1",
+    "react-native-number-selector": "^1.0.1",
+    "react-native-sms-x": "^1.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

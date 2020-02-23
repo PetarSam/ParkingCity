@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {TextInput, View, StyleSheet, AsyncStorage} from 'react-native';
 
-const TableNumber = () => {
+const TableNumber = ({setTable}) => {
   const [val, setVal] = useState();
   const [newVal, setNewVal] = useState();
 
@@ -12,6 +12,7 @@ const TableNumber = () => {
 
   const _storeData = async reg => {
     setNewVal(reg);
+    setTable(reg);
     try {
       await AsyncStorage.setItem('@reg:key', reg);
     } catch (error) {

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {RNNumberSelector} from 'react-native-number-selector';
 
-const HoursPick = () => {
+const HoursPick = ({setHours}) => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <View>
@@ -17,7 +17,7 @@ const HoursPick = () => {
         highlightedTextColor={'#fff'}
         viewAnimation={0}
         onChange={number => {
-          console.log('selected: ' + number);
+          setHours(number);
         }}
       />
     </View>

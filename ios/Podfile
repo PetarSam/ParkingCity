@@ -34,13 +34,14 @@ target 'ParkingCity' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   
-  pod 'react-native-geolocation', path: '../node_modules/@react-native-community/geolocation'
   pod 'AKPickerView', :git => 'https://github.com/prscX/AKPickerView.git'
 
   use_native_modules!
 
   pod 'RNNumberSelector', :path => '../node_modules/react-native-number-selector/ios'
 
+
+  pod 'RNBackgroundFetch', :path => '../node_modules/react-native-background-fetch'
 
   target 'ParkingCityTests' do
     inherit! :search_paths

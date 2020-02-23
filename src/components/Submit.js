@@ -1,9 +1,22 @@
 import React from 'react';
 import {Text, TouchableHighlight, StyleSheet} from 'react-native';
 
-const Submit = () => {
+import BackgroundTask from 'react-native-background-task';
+import SendSMS from 'react-native-sms-x';
+
+var i = 0;
+const Numbers = [700101, 700109, 700102, 700102, 700108, 700103];
+
+BackgroundTask.define(data => {
+  i < Number(data.hours)
+    ? (SendSMS.send(123, Numbers[Number(data.zone)], data.table), i++)
+    : null;
+  BackgroundTask.finish();
+});
+
+const Submit = ({data}) => {
   return (
-    <TouchableHighlight onPress={() => console.log('click')}>
+    <TouchableHighlight onPress={() => BackgroundTask.schedule(data)}>
       <Text style={styles.base}>Pay</Text>
     </TouchableHighlight>
   );

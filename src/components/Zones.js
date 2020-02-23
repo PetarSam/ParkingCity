@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Picker, StyleSheet} from 'react-native';
 
-const Zones = () => {
+const Zones = ({setZones}) => {
   const [zone, setZone] = useState('0');
   return (
     <View style={styles.zones}>
@@ -9,16 +9,16 @@ const Zones = () => {
         selectedValue={zone}
         style={styles.picker}
         itemStyle={styles.item}
-        onValueChange={itemValue => setZone(itemValue)}>
+        onValueChange={itemValue => {
+          setZone(itemValue);
+          setZones(itemValue);
+        }}>
         <Picker.Item label="I.Zone" value="0" />
         <Picker.Item label="I.1 Zone" value="1" />
-        <Picker.Item label="I.2 Zone" value="2" />
-        <Picker.Item label="II.1 Zone" value="3" />
-        <Picker.Item label="II.2 Zone" value="4" />
-        <Picker.Item label="III. Zone" value="5" />
-        <Picker.Item label="III. Zone Sesvete" value="6" />
-        <Picker.Item label="IV.1 Zone" value="7" />
-        <Picker.Item label="IV.2 Zone" value="8" />
+        <Picker.Item label="III. Zone" value="2" />
+        <Picker.Item label="III. Zone Sesvete" value="3" />
+        <Picker.Item label="IV.1 Zone" value="4" />
+        <Picker.Item label="IV.2 Zone" value="5" />
       </Picker>
     </View>
   );
